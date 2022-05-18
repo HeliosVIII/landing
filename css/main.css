@@ -1,0 +1,110 @@
+:root {
+    --color-red: #8f250c;
+    --color-blue: #3066be;
+    --color-black: #000f03;
+    --color-white: #f1e7da;
+    --color-light-grey: #d2d7df;
+    /*size*/
+    --width-container: 50rem;
+    /*Fonts*/
+    --font-regular: 'Montserrat', sans-serif;
+    --font-title: 'Playfair Display', serif;
+    --font-size__l: 2.3rem;
+    --font-size__m: 1.2rem;
+}
+
+/*Animaciones */
+
+@keyframes aniSalto {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-3rem);
+    }
+    100%{
+        transform:  translateY(0);
+    }
+}
+
+/*Generales*/
+body{
+    font-family: var(--font-regular);
+    font-weight: 400;
+    background-color: var(--color-white);
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+.container {
+    max-width: var(--width-container);
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.landing {
+
+}
+
+.landing__title {
+    color: var(--color-red);
+    font-family: var(--font-title);
+    font-size: var(--font-size__l);
+    font-weight: 400;
+    line-height: 2.5rem;
+    text-align: center;
+    padding: 4rem;
+}
+
+.landing__title--black {
+    color: var(--color-black);
+}
+ /*Nav*/
+.landing__ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.landing__link {
+    display: block;
+    max-width: 9rem;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+
+    touch-action: none;
+}
+
+.landing__link:hover {
+    animation-name: aniSalto;
+}
+
+.landing__img {
+    border-radius: 50%;
+    border: 3px solid var(--color-red);
+}
+
+.landing__text {
+    display: block;
+    text-align: center;
+    font-size: var(--font-size__m);
+    margin-top: .8rem;
+
+}
+/*para pantallas o ventanas de <40rem/media las afecta*/
+@media screen and (max-width: 40rem) {
+    .landing__ul{
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+    .landing__link {
+        max-width: 12rem;
+    }
+}
